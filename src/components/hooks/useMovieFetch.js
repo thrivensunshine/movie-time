@@ -37,8 +37,12 @@ export const useMovieFetch = movieId => {
   },[movieId])
 
   useEffect(() => {
+
     fetchData();
-  }, [fetchData])
+
+}, [fetchData]);
+
+
 
   return [state, loading, error];
 

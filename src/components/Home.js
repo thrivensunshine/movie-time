@@ -14,9 +14,11 @@ import NoImage from './images/no_image.jpg'
 import {useHomeFetch} from './hooks/useHomeFetch';
 
 const Home = () => {
-    const [{state, loading, error}, fetchMovies] = useHomeFetch();
-    //search state to tell app if we are in a search or not- set as an empty string
+  //search state to tell app if we are in a search or not- set as an empty string
     const [searchTerm, setSearchTerm] = useState('');
+    const [{state, loading, error}, fetchMovies] = useHomeFetch(searchTerm);
+
+
 
     const searchMovies = search =>{
       const endpoint = search ? SEARCH_BASE + search : POPULAR_BASE_URL;
